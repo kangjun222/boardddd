@@ -5,10 +5,13 @@ import java.util.List;
 import com.vam.model.BoardVO;
 
 public interface BoardMapper {
-	/*게시판 등록*/
-	 public void enroll(BoardVO board);
-	 
+	    /*게시판 등록*/
+	   public void enroll(BoardVO board);
 	    /* 게시판 목록 */
-	    public List<BoardVO> getList();
+	    public List<BoardVO> getList();    
+        /*게시판조회*/
+	    public BoardVO getPage(int bno);
+	    /*게시판 수정*/
+	    public int modify(BoardVO board);
 	 
 }
