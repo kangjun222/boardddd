@@ -84,13 +84,15 @@ textarea{
 	</div>		
 	<div class="btn_wrap">
 		   <a class="btn" id="list_btn">목록 페이지</a> 
-        <a class="btn" id="modify_btn">수정 완료</a>
-            <a class="btn" id="delete_btn">삭제</a>
-        <a class="btn" id="cancel_btn">수정 취소</a>
+        <a class="btn" id="modify_btn">수정 하기</a>
 	</div>
+
 	</form>
 	<form id="infoForm" action="/board/modify" method="get">
 		<input type="hidden" id="bno" name="bno" value='<c:out value="${pageInfo.bno}"/>'>
+				<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
+				<input type="hidden"  name="amount" value='<c:out value="${cri.amount}"/>'>
+		
 	</form>
 <script>
 let form = $("#infoForm");        // 페이지 이동 form(리스트 페이지 이동, 조회 페이지 이동)
@@ -105,17 +107,7 @@ $("#list_btn").on("click", function(e){
 
 /* 수정 하기 버튼 */
 $("#modify_btn").on("click", function(e){
-    mForm.submit();
-});
-
-/* 취소 버튼 */
-$("#cancel_btn").on("click", function(e){
-    form.attr("action", "/board/get");
-    form.submit();
-}); 
-$("#delete_btn").on("click", function(e){
-    form.attr("action", "/board/delete");
-    form.attr("method", "post");
+    form.attr("action","/board/modify");
     form.submit();
 });
 </script>	
