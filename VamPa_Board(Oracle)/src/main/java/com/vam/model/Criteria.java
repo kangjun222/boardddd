@@ -7,6 +7,10 @@ public class Criteria {
     /* 한 페이지 당 보여질 게시물 갯수 */
     private int amount;
     
+    //검색키워드//
+    private String keyword;
+    
+    
     /* 기본 생성자 -> 기봅 세팅 : pageNum = 1, amount = 10 */
     public Criteria() {
         this(1,10);
@@ -29,14 +33,18 @@ public class Criteria {
 	public int getAmount() {
 		return amount;
 	}
+	
 
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	public String getKeyword() {
+		return keyword;
+	}
 
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + "]";
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + "]";
 	}
  
 
